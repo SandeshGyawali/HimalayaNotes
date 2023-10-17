@@ -1,0 +1,87 @@
+{% extends 'notes/navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Exam Solution</title>
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/examsolution.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+
+    <div class="page-description">
+        <p>We will be updating the exam solution of various subjects frequently.Right now
+            we have following solution with us.
+        </p>
+    </div>
+    <hr>
+
+    <div class="main-container">
+        <div class="left-container">
+            {% for obj in subj %}
+            <div class="content">
+                <div class="solution-name">
+                    <h3 class="solution-collapse">{{obj.name}}</h3>
+                </div>
+                <div class="content-solution-list">
+                    <ul class="solution-list">
+                        {% for i in obj.examsolution_set.all %}
+                        <li><a href="{% url 'examsolution-detail' obj.slug i.slug %}">{{i.solution_name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+
+            
+         <!--   <div class="content">
+                <div class="solution-name">
+                    <h3 class="solution-collapse">C language</h3>
+                </div>
+                <div class="content-solution-list">
+                    <ul class="solution-list">
+                        <li><a href="#">076 chaitra regular</a></li>
+                        <li><a href="#">076 ashwin back</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="solution-name">
+                    <h3 class="solution-collapse">C language</h3>
+                </div>
+                <div class="content-solution-list">
+                    <ul class="solution-list">
+                        <li><a href="#">076 chaitra regular</a></li>
+                        <li><a href="#">076 ashwin back</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="solution-name">
+                    <h3 class="solution-collapse">C language</h3>
+                </div>
+                <div class="content-solution-list">
+                    <ul class="solution-list">
+                        <li><a href="#">076 chaitra regular</a></li>
+                        <li><a href="#">076 ashwin back</a></li>
+                    </ul>
+                </div>
+            </div>
+            -->
+
+        </div>
+        <div class="right-container">
+            
+        </div>
+    </div>
+
+</div>
+
+<script src="{% static 'js/examsolution.js' %}"></script>
+
+{% endblock %}

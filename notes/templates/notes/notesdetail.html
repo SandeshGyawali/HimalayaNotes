@@ -1,0 +1,66 @@
+{% extends 'notes/navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/notesdetail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-body">
+    <!-- <div class="progress-container fixed-top">
+        <span class="progress-bar"></span>
+    </div> -->
+
+    <div class="progress-container fixed-top">
+        <span class="progress-bar" id="myBar"></span>
+    </div>
+    
+    <div class="main-section">
+        <div class="left-sidebar-pc">
+            <h3>Inside this chapter:</h3>
+            <div class="left-sidebar-content">
+                <ul id="inside-list">
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="left-sidebar-phone">
+            <h3 class="collapse">See what's inside:</h3>
+            <div class="left-sidebar-content-phone">
+                <ul id="inside-list-phone">
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="main-content">
+            
+            <div id="notes-here">
+                
+                <h3>{{ch_one.chapter_name}}</h3>
+                <p class="notes-body">{{ch_one.body}}</p>
+            </div>
+        </div>
+        <div class="end-of-note"></div>
+
+        <div class="right-sidebar">
+            <h3>Other chapters:</h3>
+            <div class="right-sidebar-content">
+                {% for obj in ch %}
+                <li><a href="{% url 'note-detail-in' obj.subject_name obj.slug%}">{{obj.chapter_name}}</a></li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/notesdetail.js' %}"></script>
+
+{% endblock %}

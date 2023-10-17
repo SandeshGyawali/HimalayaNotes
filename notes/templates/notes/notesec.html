@@ -1,0 +1,46 @@
+{% extends 'notes/navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Notes</title>
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/notesec.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="notesec-main-section">
+    <div class="available-notes left">
+        <div class="available-notes-heading">
+            <h2>Available notes</h2>
+        </div>
+       
+        <hr>
+
+        
+        <div class="available-notes-content">
+            {% for obj in note %}
+            
+            <div class="note-content">
+            <a href="{% url 'note-detail' obj.slug %}">
+                <div class="img-container">
+                    <img src="{% static 'images/notes-image/' %}{{obj.cover_img_url}}" alt="">
+                </div>
+                <div class="note-title">
+                    <h4>{{obj.name}}</h4>
+                </div>
+            </a>
+            </div>
+           
+            {% endfor %}
+
+            
+        </div>
+
+        <div class="note-note">
+            <h3>We are working to upload note of other subjects very soon, stay tuned to get more details!!</h3>
+        </div>
+    </div>
+</div>
+{% endblock %}

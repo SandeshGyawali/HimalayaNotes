@@ -1,0 +1,158 @@
+.fixed-top{
+    position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  
+}
+.progress-container {
+    width: 100%;
+    background-color: transparent;
+    height: 5px;
+    display: block;
+  }
+  .progress-bar {
+    background-color: greenyellow;
+    width: 0%;
+    display: block;
+    height: inherit;
+  }
+
+
+a{
+    text-decoration: none;
+    padding: 12px;
+ 
+}
+li{
+    list-style: none;
+}
+.right-sidebar-content li{
+    margin-top: 6px;
+}
+#notes-here {
+    white-space: pre-wrap;
+}
+table {
+    border-collapse: collapse;
+  }
+  
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+img {
+    width: auto ;
+    max-width: 100% ;
+    height: auto ;
+  }
+.main-body{
+    
+    width:100%;
+}
+pre{
+    padding: 6px;
+    border-radius: 8px;
+    background-color: #e0ffda;
+    overflow-y: auto;
+}
+
+@media (min-width:580px)
+{
+    .main-section{
+        margin-top:5px;
+        display: flex;
+        justify-content: space-around;
+        
+    }
+
+    .left-sidebar-pc{
+        
+        width:18%;
+        position: sticky;
+        top: 5px;
+        align-self: flex-start; /* <-- this is the fix */
+        text-align: left;
+        
+    }
+    ul#inside-list li{
+        margin-top: 6px;
+    }
+
+    .left-sidebar-phone{
+        display: none;
+        
+    }
+   
+
+    .main-content{
+        width:60%;
+        
+        height: auto;
+    }
+
+    .right-sidebar{
+        
+        width:18%;
+        position: sticky;
+        top: 5px;
+        align-self: flex-start; /* <-- this is the fix */
+        text-align: left;
+        
+    }
+}
+
+@media (max-width:579px)
+{
+    .main-section{
+        margin: 0 auto;
+        width: 98%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-sidebar-phone{
+        
+        position: sticky;
+        top: 5px;
+    }
+
+    .left-sidebar-pc{
+        display: none;
+    }
+    #inside-list-phone {
+        background-color: #ebffd6;
+    }
+    ul#inside-list-phone li{
+        margin-top: 8px;
+    }
+
+
+    .main-content{
+       
+        height: auto;
+        
+    }
+
+    .right-sidebar{
+        margin-top: 24px;
+    }
+    .end-of-note{
+        margin-top: 12px;
+        border:1px solid grey;
+    }
+
+}
+
+.collapse {
+    background-color: #e0ffda;
+    padding: 8px;
+}
+
+.active,
+.collapse:hover {
+    background-color: #e0ffda;
+}
+

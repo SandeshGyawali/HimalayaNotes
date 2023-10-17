@@ -1,0 +1,60 @@
+{% extends 'notes/navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>About</title>
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <div class="description">
+        <h1>About Us:</h1>
+        <p>Himalaya Notes is a website that focuses on providing quality notes and exam
+            solutions to the engineering students. We have several notes and exam solutions
+            that is mainly targeted to TU IOE students but can be useful for other university
+            students as well. <p>
+                <br>
+            <p>Opening 10-12 different ppts just to study one subject and scrolling through 15-20 slides
+            to search a particular topic not only makes your mind feel bore but also takes more time and
+            decreases your efficiency.</p> 
+            <br>
+            <p>
+            In himalaya notes we have made it easier to surf through various chapters and to navigate 
+            within the chapter itself. To do that we have added:
+            <b>1. a section where you can see what main topics are present within that chapter and jump right
+            into that particuar topic</b>
+            <br>
+            <b>2. a section where you can see all the chapters of that particular subject. Just click on any 
+            chapter you want and you will be there</b>
+        </p><br>
+        <p>As we have just started there are very few notes and solutions on the website right now.
+            We are working to add new materials very soon. If you actually found this website helpful
+            share it with your friends or someone who might get benefited from this.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <p>If you have notes or solutions that you think can help others, feel free to contact us on our
+            facebook page:
+        </p>
+        <div class="contact-container">
+            <a href="https://www.facebook.com/Himalaya-Notes-109126008165420" target="_blank">
+                <div class="facebook-container">
+                    <img src="/static/images/facebook.png" alt="">
+                </div>
+            </a>
+    </div>
+
+    <div class="right">
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/about.js' %}"></script>
+
+{% endblock %}

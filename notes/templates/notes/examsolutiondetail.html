@@ -1,0 +1,34 @@
+{% extends 'notes/navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Exam solution</title>
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/examsolutiondetail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-container">
+        <div class="left">
+            <div id="notes-here">
+               
+                <p class="notes-body">{{soln.body}}</p>
+            </div>
+        </div>
+        <div class="right">
+            <h3>Other solution of this subject:</h3>
+            <div class="right-content">
+                <ul class="right-content-list">
+                    {% for obj in all_soln %}
+                    <li><a href="{% url 'examsolution-detail' obj.subject_name obj.slug %}">{{obj.solution_name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script src="{% static 'js/examsolutiondetail.js' %}"></script>
+
+{% endblock %}
